@@ -3,6 +3,10 @@
 import csv
 import random
 
+# Worth pointing out that this script expects there to 
+# be a number of both experienced and inexperienced 
+# players that can be split evenly across teams. 
+
 if __name__ == "__main__":
     
     players = []
