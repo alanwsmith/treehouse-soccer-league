@@ -1,7 +1,7 @@
 #!/usr/bin/env python 
 
 import csv
-
+import random
 
 if __name__ == "__main__":
     
@@ -40,16 +40,14 @@ if __name__ == "__main__":
         while len(player_list):
         	for team_key, team_data in teams.items():
         		if len(player_list):
-        		    team_data['players'].append(player_list.pop())
+        		    team_data['players'].append(player_list.pop(random.randint(0,len(player_list) - 1))) 
 
 
     load_players()
     experienced_players = players_who_have_experience('YES') 
     inexperienced_players = players_who_have_experience('NO') 
 
-    print(experienced_players)
-    print(inexperienced_players)
-
     put_players_on_team_randomly(experienced_players)
+    put_players_on_team_randomly(inexperienced_players)
 
     print(teams)
