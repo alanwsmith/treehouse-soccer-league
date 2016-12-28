@@ -7,7 +7,7 @@ import random
 
 if __name__ == "__main__":
     
-    player_dict = {}
+    players = {}
     teams = {
         'Sharks': { 'players': [] }, 
         'Dragons': { 'players': [] }, 
@@ -18,7 +18,7 @@ if __name__ == "__main__":
         with open('soccer_players.csv', 'r') as csv_file:
             csv_data = csv.DictReader(csv_file)
             for row in csv_data:
-                player_dict[row['Name']] = {
+                players[row['Name']] = {
                     'height': row['Height (inches)'],
                     'experience': row['Soccer Experience'],
                     'guardian': row['Guardian Name(s)']
@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     def players_who_have_experience(do_they_have_it):
         return_list = []
-        for player_name, player_data in player_dict.items():
+        for player_name, player_data in players.items():
             if player_data['experience'] == do_they_have_it:
                 return_list.append(player_name)
         return return_list 
@@ -42,7 +42,7 @@ if __name__ == "__main__":
             for team_key, team_data in teams.items():
                 teams_file.write(team_key + '\n')
                 for player in team_data['players']:
-                    teams_file.write('{}, {}, {}'.format(player, player_dict[player]['experience'], player_dict[player]['guardian']) + '\n')
+                    teams_file.write('{}, {}, {}'.format(player, players[player]['experience'], players[player]['guardian']) + '\n')
                 teams_file.write('\n')
 
     load_players()
