@@ -45,8 +45,17 @@ if __name__ == "__main__":
                     teams_file.write('{}, {}, {}'.format(player, players[player]['experience'], players[player]['guardian']) + '\n')
                 teams_file.write('\n')
 
+    def output_welcome_letters():
+        for team_name, team_data in teams.items():
+        	for player_name in team_data['players']:
+        		file_name = player_name.lower().replace(' ', '_') + '.txt'
+        		with open('letters/' + file_name, 'w') as letter:
+        		    letter.write('Dear {}'.format('x'))
+
+
     load_players()
     put_players_on_team_randomly(players_who_have_experience('YES'))
     put_players_on_team_randomly(players_who_have_experience('NO'))
     output_team_file()
+    output_welcome_letters()
 
