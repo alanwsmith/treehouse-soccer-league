@@ -3,6 +3,8 @@
 import csv
 import random
 
+# Files are written to the 'output' directory.
+
 # Worth pointing out that this script expects there to 
 # be a number of both experienced and inexperienced 
 # players that can be split evenly across teams. 
@@ -46,6 +48,14 @@ if __name__ == "__main__":
         		if len(player_list):
         		    team_data['players'].append(player_list.pop(random.randint(0,len(player_list) - 1))) 
 
+    def output_team_file():
+        with open('output/teams.txt', 'w') as teams_file:
+            for team_key, team_data in teams.items():
+                teams_file.write(team_key + '\n')
+            	for player in team_data['players']:
+            		teams_file.write('{}, '.format(player) + '\n')
+
+
 
     load_players()
     experienced_players = players_who_have_experience('YES') 
@@ -55,3 +65,4 @@ if __name__ == "__main__":
     put_players_on_team_randomly(inexperienced_players)
 
     print(teams)
+    output_team_file()
