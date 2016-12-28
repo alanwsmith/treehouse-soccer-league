@@ -44,9 +44,9 @@ if __name__ == "__main__":
 
     def players_who_have_experience(do_they_have_it):
         return_list = []
-        for player in players:
-        	if player['experience'] == do_they_have_it:
-        		return_list.append(player['name'])
+        for player_name, player_data in player_dict.items():
+        	if player_data['experience'] == do_they_have_it:
+        		return_list.append(player_name)
         return return_list 
 
     def put_players_on_team_randomly(player_list):
@@ -73,4 +73,3 @@ if __name__ == "__main__":
 
     print(teams)
     output_team_file()
-
