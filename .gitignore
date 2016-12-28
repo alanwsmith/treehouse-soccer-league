@@ -90,4 +90,5 @@ ENV/
 
 # VIM swap file
 *.swp
+*.txt
 
