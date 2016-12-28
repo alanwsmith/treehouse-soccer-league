@@ -6,7 +6,7 @@ My run through the Treehouse Soccer League project in Python.
 Notes
 -----
 
-Files are written to the 'output' directory.
+The `teams.txt` file is written in the `output` directory. The extra credit individual player letters are output to the `letters` directory.
 
 Theres an empty line between each of the teams. The instructions didn't specify this one way or the other. It looks better with it, so I went that way.
 
