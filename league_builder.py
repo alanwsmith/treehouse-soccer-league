@@ -62,11 +62,9 @@ if __name__ == "__main__":
             		teams_file.write('{}, {}'.format(player, player_dict[player]['experience']) + '\n')
 
     load_players()
-    experienced_players = players_who_have_experience('YES') 
-    inexperienced_players = players_who_have_experience('NO') 
 
-    put_players_on_team_randomly(experienced_players)
-    put_players_on_team_randomly(inexperienced_players)
+    put_players_on_team_randomly(players_who_have_experience('YES'))
+    put_players_on_team_randomly(players_who_have_experience('NO'))
 
     print(teams)
     output_team_file()
