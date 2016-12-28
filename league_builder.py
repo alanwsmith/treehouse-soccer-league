@@ -36,6 +36,12 @@ if __name__ == "__main__":
         		return_list.append(player['name'])
         return return_list 
 
+    def put_players_on_team_randomly(player_list):
+        while len(player_list):
+        	for team_key, team_data in teams.items():
+        		if len(player_list):
+        		    team_data['players'].append(player_list.pop())
+
 
     load_players()
     experienced_players = players_who_have_experience('YES') 
@@ -43,3 +49,7 @@ if __name__ == "__main__":
 
     print(experienced_players)
     print(inexperienced_players)
+
+    put_players_on_team_randomly(experienced_players)
+
+    print(teams)
