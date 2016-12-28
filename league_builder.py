@@ -26,15 +26,9 @@ if __name__ == "__main__":
     
     player_dict = {}
     teams = {
-    	'Sharks': { 
-    		'players': [] 
-    	}, 
-    	'Dragons': {
-    		'players': [] 
-    	}, 
-    	'Raptors': {
-    		'players': [] 
-    	} 
+    	'Sharks': { 'players': [] }, 
+    	'Dragons': { 'players': [] }, 
+    	'Raptors': { 'players': [] } 
     }
 
     def load_players(): 
