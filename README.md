@@ -15,3 +15,6 @@ Worth pointing out that this script expects there to be a number of both experie
 This script also relies on the fact that there are 18 players in the input file and that there are three teams. Because that works out to 6 players per team, no additional calculation is done to keep the same number of players on each team.
 
 Also, this currently stores players in a player_dict with names for keys. If a new list with two players who have the same name is used, one of them will get overwritten. Because this script is written specifically for the test file I'm leaving it like that.
+
+For the Extra Credit, I can't remember if the course covered how to replace spaces with underscores. I used the `.replace()` for that. Another possible way would have been to split on spaces and then join back with underscores, but I'm don't remember that being covered either. 
+
