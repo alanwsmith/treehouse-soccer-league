@@ -6,6 +6,7 @@ import csv
 if __name__ == "__main__":
     
     players = []
+    TEAMS = ['Sharks', 'Dragons', 'Raptors']
 
     def load_players(): 
         with open('soccer_players.csv', 'r') as csv_file:
@@ -19,11 +20,11 @@ if __name__ == "__main__":
                 })
 
     def players_with_experience():
-        count = 0
+        return_list = []
         for player in players:
         	if player['experience'] == 'YES':
-        		count += 1
-        return count
+        		return_list.append(player['name'])
+        return return_list 
 
 
     load_players()
