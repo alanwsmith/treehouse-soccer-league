@@ -12,6 +12,7 @@ import random
 if __name__ == "__main__":
     
     players = []
+    player_dict = {}
     teams = {
     	'Sharks': { 
     		'players': [] 
@@ -35,6 +36,12 @@ if __name__ == "__main__":
                     'guardian': row['Guardian Name(s)']
                 })
 
+                player_dict[row['Name']] = {
+                    'height': row['Height (inches)'],
+                    'experience': row['Soccer Experience'],
+                    'guardian': row['Guardian Name(s)']
+                }
+
     def players_who_have_experience(do_they_have_it):
         return_list = []
         for player in players:
@@ -53,7 +60,7 @@ if __name__ == "__main__":
             for team_key, team_data in teams.items():
                 teams_file.write(team_key + '\n')
             	for player in team_data['players']:
-            		teams_file.write('{}, '.format(player) + '\n')
+            		teams_file.write('{}, {}'.format(player, player_dict[player]['experience']) + '\n')
 
 
 
@@ -66,3 +73,4 @@ if __name__ == "__main__":
 
     print(teams)
     output_team_file()
+
