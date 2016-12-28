@@ -6,8 +6,6 @@ My run through the Treehouse Soccer League project in Python.
 Notes
 -----
 
-The `teams.txt` file is written in the `output` directory. The extra credit individual player letters are output to the `letters` directory. These directories are in the GitHub repo. The script currently doesn't try to make those directories (since we haven't gotten to that yet). If the repo is cloned, there shouldn't be a problem. If the 
-
 Theres an empty line between each of the teams. The instructions didn't specify this one way or the other. It looks better with it, so I went that way.
 
 Worth pointing out that this script expects there to be a number of both experienced and inexperienced players that can be split evenly across teams. 
